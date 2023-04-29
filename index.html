@@ -14,12 +14,13 @@
         }
 
         section {
-            background-image: url('/bg/10.jpg');
+            background-color: black;
             background-repeat: no-repeat;
             background-size: cover;
             height: 100vh;
             font-family: 'Poppins', sans-serif;
         }
+       
 
         .login-box {
             position: absolute;
@@ -39,7 +40,7 @@
         .login-box p:first-child {
             margin: 0 0 30px;
             padding: 0;
-            color: #2f002c;
+            color: white;
             text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
@@ -54,12 +55,13 @@
             width: 100%;
             padding: 10px 0;
             font-size: 16px;
-            color: #2f002c;
+            
             margin-bottom: 30px;
             border: none;
             border-bottom: 1px solid #2f002c;
             outline: none;
             background: transparent;
+            color: white;
         }
 
         .login-box .user-box label {
@@ -71,13 +73,14 @@
             color: #2f002c;
             pointer-events: none;
             transition: .5s;
+            color: white;
         }
 
         .login-box .user-box input:focus~label,
         .login-box .user-box input:valid~label {
             top: -20px;
             left: 0;
-            color: #2f002c;
+            color: white;
             font-size: 12px;
         }
 
@@ -93,7 +96,8 @@
             overflow: hidden;
             transition: .200s;
             margin-top: 40px;
-            letter-spacing: 3px
+            letter-spacing: 3px;
+            color: white;
         }
 
         .login-box a:hover {
@@ -101,23 +105,58 @@
             box-shadow: 0 0 24px 0;
         }
         .button{
-            background-color: transparent;
+            color:white;
+            background-color: black;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left:10px;
             padding-right: 10px;
-            border-radius:8px
+            border-radius:8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         button:hover{
             transform:scale(1.2);
-            transition : all 1s ease;
+            transition : all 1s ease-in-out;
             box-shadow: 0 0 24px 0 aqua;
+            color:rgb(28, 31, 31);
+            background-color: aqua;
         }
         .login-box:hover{
             box-shadow: 0 0 24px 0 aqua;
-            transition: all 2s ease;
+            transition : all 1s ease-in-out;
+        }
+        .input:hover{
+            text-shadow: 0 0 24px 0 aqua;
+            transition : all 1s ease;
 
         }
+        .login-box .user-box input:hover{
+            border-bottom: 1px solid aqua;
+
+        } 
+        @media (prefers-reduced-motion: no-preference) {
+            .button {
+                animation: button-spin infinite 1s linear;
+            }
+        }
+        @keyframes button-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+            }
+
+            .div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
     </style>
 </head>
 
@@ -126,15 +165,16 @@
     <section>
         <div class="login-box">
             <p>Login</p>
-            <form>
+            <form class="div">
                 <div class="user-box">
-                    <input required="true" name="" type="email">
+                    <input class="input" required="true" name="" type="email">
                     <label>Email</label>
                 </div>
                 <div class="user-box">
                     <input required="true" name="" type="password">
                     <label>Password</label>
                 </div>
+
                 <button class="button" href="#">Submit</button>
             </form>
         </div>
